@@ -1,0 +1,302 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Font */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+/* Loader */
+#loader {
+  background: #000000;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.cube {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinCube 2s infinite linear;
+}
+
+.cube .face {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #ffcc00;
+  opacity: 0.9;
+  border: 2px solid #000000;
+}
+
+.cube .face1 { transform: rotateY(0deg) translateZ(25px); }
+.cube .face2 { transform: rotateY(90deg) translateZ(25px); }
+.cube .face3 { transform: rotateY(180deg) translateZ(25px); }
+.cube .face4 { transform: rotateY(-90deg) translateZ(25px); }
+.cube .face5 { transform: rotateX(90deg) translateZ(25px); }
+.cube .face6 { transform: rotateX(-90deg) translateZ(25px); }
+
+@keyframes spinCube {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  z-index: 1000;
+}
+
+nav .logo img {
+  height: 80px;
+  animation: logoSpin 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes logoSpin {
+  0% { opacity: 0; transform: rotateY(-90deg) scale(0.8); }
+  100% { opacity: 1; transform: rotateY(0deg) scale(1); }
+}
+
+
+nav img {
+  height: 60px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: rgb(236, 214, 12);
+}
+
+/* Hero Section */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+  width: 90%;
+  max-width: 800px;
+
+}
+
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 💡 This styles the "Let’s Collaborate" button */
+.cta {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #0d0d0d;
+  padding: 0.8rem 1.6rem;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #ffffff;
+}
+
+#contact .cta {
+  display: inline-block;
+  padding: 5px 400px; /* increase horizontal padding */
+  font-size: 1rem;
+  width: fit-content; /* or use a fixed width if needed */
+  max-width: 100%;
+  margin-top: 10px; /* Adjust this value as needed */
+}
+
+#contact {
+  margin-top: 80px; /* Adjust spacing as needed */
+}
+
+/* Sections */
+section {
+  padding: 5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  scroll-snap-align: start;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+
+}
+
+section h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* capabilties stuff */
+
+.band {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7rem; /* Add this line for spacing between text and image */
+
+  
+  /* ↓↓ Make the band narrower in height */
+  padding: 3rem 2vw;
+  min-height: auto;
+
+  /* ↓↓ Full width look with spacing between bands */
+  margin: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* ↓↓ Transparency and glass look */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease; /* smooth transition */
+}
+
+.band:hover {
+  transform: translateY(-6px) scale(1.02);  /* subtle lift & zoom */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* shadow for depth */
+}
+
+.band:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.band .text {
+  flex: 1;
+  max-width: 650px; /* slightly wider */
+  min-width: 300px;
+  padding: 0px;
+}
+
+.band .spacer {
+  flex: 1;
+  max-width: 650px;
+  min-width: 300px;
+  padding: 1rem;
+  height: 300px; /* shorter height */
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure all text inside .text div also transitions */
+.band .text h2,
+.band .text p {
+  transition: all 0.3s ease;
+}
+
+.band .text h2 {
+  font-size: 2rem; /* smaller heading */
+  margin-bottom: 0.5rem;
+}
+
+.band .text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .band {
+    flex-direction: column !important;
+    padding: 2rem 4vw;
+  }
+
+  .band .text,
+  .band .spacer {
+    max-width: 100%;
+    min-width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* Footer */
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* === HERO SECTION STYLES === */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.7); /* Lower = darker, try 0.3 to 0.5 */
+}
+
