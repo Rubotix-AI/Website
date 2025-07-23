@@ -6,8 +6,12 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Capabilities from "./components/Capabilities";
+import NexusPage from "./components/NexusPage";
+import SentiencePage from "./components/SentiencePage";
+import GenesisPage from "./components/GenesisPage";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
   useEffect(() => {
@@ -22,15 +26,29 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      <Loader />
-      <Navbar />
-      <Hero />
-      <About />
-      <Capabilities />
-      <Contact />
-      <Footer />
-    </>
+    <Router> {/* ✅ Entire app is inside the Router context now */}
+      <>
+        <Loader />
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <About />
+                <Capabilities />
+              </>
+            }
+          />
+          <Route path="/nexus" element={<NexusPage />} />
+          <Route path="/sentience" element={<SentiencePage />} />
+          <Route path="/genesis" element={<GenesisPage />} />
+        </Routes>
+        <Contact />
+        <Footer />
+      </>
+    </Router>
   );
 };
 

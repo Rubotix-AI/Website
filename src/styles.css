@@ -155,7 +155,7 @@ nav img {
 
 #contact .cta {
   display: inline-block;
-  padding: 5px 400px; /* increase horizontal padding */
+  padding: 5px 100px; /* increase horizontal padding */
   font-size: 1rem;
   width: fit-content; /* or use a fixed width if needed */
   max-width: 100%;

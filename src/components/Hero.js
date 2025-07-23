@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className="hero-container">
       <video className="background-video" autoPlay loop muted playsInline>
-        <source src="/assets/images/swarm.mp4" type="video/mp4" />
+        <source src="/assets/videos/swarm.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="hero-overlay">

@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Capabilities = () => {
   return (
     <section id="capabilities">
       <h2>Our Capabilities</h2>
+      <Link to="/nexus" style={{ textDecoration: 'none', color: 'inherit' }}>
       <section className="band">
         <div className="text">
           <h2>Rubotix Nexus</h2>
@@ -17,7 +19,9 @@ const Capabilities = () => {
         />
       </div>
       </section>
+      </Link>
 
+      <Link to="/sentience" style={{ textDecoration: 'none', color: 'inherit' }}>
       <section className="band">
         <div className="text">
           <h2>Rubotix Sentience</h2>
@@ -38,7 +42,9 @@ const Capabilities = () => {
         />
       </div>
       </section>
+      </Link>
 
+      <Link to="/genesis" style={{ textDecoration: 'none', color: 'inherit' }}>
       <section className="band">
         <div className="text">
           <h2>Rubotix Genesis</h2>
@@ -52,6 +58,8 @@ const Capabilities = () => {
         />
       </div>
       </section>
+      </Link>
+      
     </section>
   );
 };
