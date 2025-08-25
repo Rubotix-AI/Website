@@ -13,7 +13,7 @@ const Capabilities = () => {
         </div>
         <div className="spacer">
         <img
-          src="/assets/images/image.jpg"  // ← update filename
+          src="/assets/images/nexus.jpg"  // ← update filename
           alt="Rubotix Nexus"
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
         />
@@ -36,8 +36,8 @@ const Capabilities = () => {
         </div>
         <div className="spacer">
         <img
-          src="/assets/images/image.jpg"  // ← update filename
-          alt="Rubotix Nexus"
+          src="/assets/images/sentience.jpg"  // ← update filename
+          alt="Rubotix Sentience"
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
         />
       </div>
@@ -52,8 +52,8 @@ const Capabilities = () => {
         </div>
         <div className="spacer">
         <img
-          src="/assets/images/image.jpg"  // ← update filename
-          alt="Rubotix Nexus"
+          src="/assets/images/genesis.jpg"  // ← update filename
+          alt="Rubotix Genesis"
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
         />
       </div>
