@@ -26,7 +26,7 @@ const App = () => {
   }, []);
 
   return (
-    <Router> {/* ✅ Entire app is inside the Router context now */}
+    <Router> {}
       <>
         <Loader />
         <Navbar />
