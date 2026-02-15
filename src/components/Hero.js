@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import BIRDS from 'vanta/dist/vanta.birds.min';
+import NET from 'vanta/dist/vanta.net.min';
 import '../styles.css';
 
 const Hero = () => {
@@ -11,7 +11,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (!vantaEffect.current) {
-      vantaEffect.current = BIRDS({
+      vantaEffect.current = NET({
         el: vantaRef.current,
         THREE: THREE,
 
@@ -21,16 +21,9 @@ const Hero = () => {
         gyroControls: false,
 
         // Visuals
-        backgroundColor: 0x0b0f1a,
-        color1: 0x5fa8ff,
-        color2: 0xffffff,
-
-        // Swarm behavior
-        birdSize: 1.2,
-        quantity: 3,
-        separation: 40,
-        alignment: 35,
-        cohesion: 30,
+        backgroundColor: 0x000000,
+		color: 0xffc000,
+		points: 10.0,
 
         // Performance scaling
         scale: 1.0,
