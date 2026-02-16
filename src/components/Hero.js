@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import NET from 'vanta/dist/vanta.net.min';
+import NET from 'vanta/dist/vanta.net.min.js';
 import '../styles.css';
 
 const Hero = () => {
