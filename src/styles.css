@@ -126,15 +126,16 @@ nav img {
   z-index: 1;
   width: 100%;
   max-width: 1200px;
-
 }
 
 .hero-overlay h1 {
+  text-align: center;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .hero-overlay p {
+  text-align: center;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -207,8 +208,9 @@ section p {
   min-height: auto;
 
   /* ↓↓ Full width look with spacing between bands */
-  margin: 2rem;
+  margin: 2rem auto;
   width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
 
   /* ↓↓ Transparency and glass look */
@@ -352,6 +354,9 @@ footer {
   font-size: 1.2rem;
 }
 
+#contact p {
+	text-align: center;
+}
 
 /* ================= MOBILE NAV ================= */
 @media (max-width: 768px) {
@@ -437,5 +442,4 @@ footer {
 	  display: flex;
   }
 }
-
 
