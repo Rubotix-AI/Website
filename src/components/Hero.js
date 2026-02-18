@@ -9,7 +9,6 @@ const Hero = () => {
       <div className="hero-overlay">
         <h1>Solving Autonomy, One Move at a Time</h1>
         <p>AI & Robotics engineered to solve the puzzle of autonomy.</p>
-        <a href="#contact" className="cta">Let’s Collaborate</a>
       </div>
     </section>
   );
