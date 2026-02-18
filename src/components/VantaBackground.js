@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import GLOBE from 'vanta/dist/vanta.globe.min.js';
+import GLOBE from 'vanta/dist/vanta.net.min.js';
 import '../styles.css';
 
 const VantaBackground = () => {
@@ -25,7 +25,11 @@ const VantaBackground = () => {
         // Visuals
         backgroundColor: 0x000000,
 		color: 0xffc000,
-		color2: 0xffffff,
+
+		points: 10,
+		maxDistance: 20,
+
+		spacing: 15,
 		
         scale: 1.0,
       });
