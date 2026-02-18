@@ -11,6 +11,8 @@ const VantaBackground = () => {
 
   useEffect(() => {
 	if (vantaEffect.current) return;
+	
+	const isMobile = window.innerWidth <= 768;
 
     if (!vantaEffect.current) {
       vantaEffect.current = GLOBE({
@@ -28,7 +30,6 @@ const VantaBackground = () => {
 		color2: 0xffffff,
 		
         scale: 1.0,
-        scaleMobile: 0.5,
       });
     }
 

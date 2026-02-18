@@ -175,7 +175,6 @@ section {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-  scroll-snap-align: start;
   transition: transform 0.4s ease, opacity 0.4s ease;
   position:relative;
   z-index:1;
@@ -291,19 +290,7 @@ section p {
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .band {
-    flex-direction: column !important;
-    padding: 2rem 4vw;
-  }
 
-  .band .text,
-  .band .spacer {
-    max-width: 100%;
-    min-width: 100%;
-    text-align: center;
-  }
-}
 
 
 /* Vanta Background */
@@ -326,6 +313,128 @@ footer {
   color: #aaa;
 }
 
+/* Hamburger Menu*/
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Mobile Menu */
+
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1.2rem;
+  z-index: 1500;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+/* ================= MOBILE NAV ================= */
+@media (max-width: 768px) {
+  .band {
+    flex-direction: column !important;
+    padding: 2rem 4vw;
+    margin: 1rem 0;
+    border-radius: 12px;
+    gap: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  .band .text{
+	  max-width:100%;
+	  min-width:0;
+	  text-align: center;
+  }
+
+  .band .spacer {
+	height:200px;
+    max-width: 100%;
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .band:active {
+    transform: scale(0.98);
+  }
+  
+  nav {
+    padding: 0.6rem 1rem;
+  }
+
+  nav .logo img {
+    height: 44px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  section {
+    padding: 3rem 1.2rem;
+	max-width: 100%;
+    margin: 0;
+  }
+
+  .hero {
+	min-height: 100vh;
+    height: auto;
+    padding-top: 80px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.7rem;
+  }
+
+  section p {
+    font-size: 0.95rem;
+  }
+
+  .preview-video {
+    opacity: 1;
+  }
+
+  body {
+    scroll-snap-type: none;
+  }
+
+  #contact .cta {
+	  padding: 0.8rem 1.4rem;
+  }
+
+  .hamburger {
+	  display: flex;
+  }
+}
 
 
