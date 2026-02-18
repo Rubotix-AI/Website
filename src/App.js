@@ -11,6 +11,8 @@ import SentiencePage from "./components/SentiencePage";
 import GenesisPage from "./components/GenesisPage";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import VantaBackground from "./components/VantaBackground";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -26,9 +28,10 @@ const App = () => {
   }, []);
 
   return (
-    <Router> {}
-      <>
+    <Router> {/* Entire app is inside the Router context now */}
+      <div>
         <Loader />
+	  	<VantaBackground />
         <Navbar />
         <Routes>
           <Route
@@ -38,6 +41,7 @@ const App = () => {
                 <Hero />
                 <About />
                 <Capabilities />
+                <Contact />
               </>
             }
           />
@@ -45,11 +49,11 @@ const App = () => {
           <Route path="/sentience" element={<SentiencePage />} />
           <Route path="/genesis" element={<GenesisPage />} />
         </Routes>
-        <Contact />
         <Footer />
-      </>
+      </div>
     </Router>
   );
 };
 
 export default App;
+
