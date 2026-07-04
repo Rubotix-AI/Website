@@ -12,10 +12,12 @@ import FAQ from "./components/FAQ";
 import Quote from "./components/Quote";
 import Footer from "./components/Footer";
 import StickyCTA from "./components/StickyCTA";
+import NetworkBackground from "./components/NetworkBackground";
 
 const App = () => {
   return (
     <>
+      <NetworkBackground />
       <Navbar />
       <main>
         <Hero />
