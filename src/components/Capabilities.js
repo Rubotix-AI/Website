@@ -1,110 +1,70 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useRef } from "react";
+import Reveal from "./Reveal";
+
+const MATERIALS = [
+  { name: "PLA / PLA+", use: "Fast concept models, form checks, jigs", trait: "Cheap, rigid, fast" },
+  { name: "PETG", use: "Functional parts, brackets, outdoor-adjacent use", trait: "Tough, slightly flexible" },
+  { name: "ABS / ASA", use: "UAE outdoor parts, enclosures, automotive", trait: "Heat & UV resistant" },
+  { name: "TPU", use: "Gaskets, feet, bumpers, wheels, seals", trait: "Rubber-like, flexible" },
+  { name: "Nylon / PA-CF", use: "End-use robotics parts, gears, load-bearing mounts", trait: "Strongest, wear resistant" },
+];
+
+const CAPS = [
+  { k: "Layer resolution", v: "0.08 – 0.32 mm" },
+  { k: "Dimensional tolerance", v: "±0.2 mm typical (tighter on request)" },
+  { k: "Threaded joints", v: "Heat-set brass inserts M2 – M6" },
+  { k: "Finishing", v: "Sanding, priming, vapour smoothing (ABS)" },
+  { k: "CAD deliverables", v: "STEP, STL, technical drawings (PDF)" },
+  { k: "Design software", v: "Autodesk Inventor, Fusion 360" },
+];
 
 const Capabilities = () => {
-    const videoRefs = useRef([]);
-
-    const handleMouseEnter = (index) => {
-        if (videoRefs.current[index]) {
-            videoRefs.current[index].play();
-        }
-    };
-
-    const handleMouseLeave = (index) => {
-        if (videoRefs.current[index]) {
-            videoRefs.current[index].pause();
-            videoRefs.current[index].currentTime = 0; // reset to start
-        }
-    };
-
   return (
-    <section id="capabilities">
-      <h2>Our Capabilities</h2>
-      <Link to="/nexus" style={{ textDecoration: 'none', color: 'inherit' }}>
-      <section
-          className="band"
-          onMouseEnter={() => handleMouseEnter(0)}
-          onMouseLeave={() => handleMouseLeave(0)}
-      >
-        <div className="text">
-          <h2>Rubotix Nexus</h2>
-          <p>Industrial Automation & IoT Solutions</p>
-        </div>
-        <div className="spacer">
-        <img
-          src="/assets/images/nexus.jpg"  // ← update filename
-          alt="Rubotix Nexus"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
-        />
-        <video
-            ref={(el) => (videoRefs.current[0] = el)}
-            src="/assets/videos/industrial_automation.mp4"
-            className="preview-video"
-            muted
-            loop
-            playsInline
-        />
-      </div>
-      </section>
-      </Link>
+    <section id="capabilities" className="section section--alt">
+      <Reveal>
+        <p className="eyebrow">
+          <span className="eyebrow__tick" /> MATERIALS & CAPABILITIES
+        </p>
+        <h2>Built in the right material</h2>
+        <p className="section__lead">
+          A bracket that lives on a Dubai rooftop needs different plastic than a desk gadget.
+          We pick the material for the job — and tell you why.
+        </p>
+      </Reveal>
 
-      <Link to="/sentience" style={{ textDecoration: 'none', color: 'inherit' }}>
-      <section
-          className="band"
-          onMouseEnter={() => handleMouseEnter(1)}
-          onMouseLeave={() => handleMouseLeave(1)}
-      >
-        <div className="text">
-          <h2>Rubotix Sentience</h2>
-          <p>AI & Autonomous Decision-Making Systems</p>
-        </div>
-        <div className="spacer">
-        <img
-          src="/assets/images/sentience.jpg"
-          alt="Rubotix Sentience"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
-        />
-        <video
-            ref={(el) => (videoRefs.current[1] = el)}
-            src="/assets/videos/decision_making.mp4"
-            className="preview-video"
-            muted
-            loop
-            playsInline
-        />
-      </div>
-      </section>
-      </Link>
+      <div className="caps">
+        <Reveal className="caps__materials">
+          <table>
+            <thead>
+              <tr>
+                <th>Material</th>
+                <th>Best for</th>
+                <th>Character</th>
+              </tr>
+            </thead>
+            <tbody>
+              {MATERIALS.map((m) => (
+                <tr key={m.name}>
+                  <td className="mono">{m.name}</td>
+                  <td>{m.use}</td>
+                  <td>{m.trait}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </Reveal>
 
-      <Link to="/genesis" style={{ textDecoration: 'none', color: 'inherit' }}>
-      <section
-          className="band"
-          onMouseEnter={() => handleMouseEnter(2)}
-          onMouseLeave={() => handleMouseLeave(2)}
-      >
-        <div className="text">
-          <h2>Rubotix Genesis</h2>
-          <p>Prototyping, R&D, and Custom Robotics</p>
-        </div>
-        <div className="spacer">
-        <img
-          src="/assets/images/genesis.jpg"  // ← update filename
-          alt="Rubotix Genesis"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
-        />
-        <video
-            ref={(el) => (videoRefs.current[2] = el)}
-            src="/assets/videos/custom_robotics.mp4"
-            className="preview-video"
-            muted
-            loop
-            playsInline
-        />
+        <Reveal delay={120} className="caps__specs">
+          <dl>
+            {CAPS.map((c) => (
+              <div key={c.k} className="caps__row">
+                <dt>{c.k}</dt>
+                <dd className="mono">{c.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </div>
-      </section>
-      </Link>
-      
     </section>
   );
 };
